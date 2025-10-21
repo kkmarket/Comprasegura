@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Renda Digital em Casa - Transforme sua Vida Financeira</title>
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Seções */
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #000, #1a1a1a);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-align: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Botões de CTA - ALINHAMENTO CORRIGIDO */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ffcc00, #ff9900);
+            color: #000;
+            font-weight: bold;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            margin: 10px;
+            text-align: center;
+            line-height: 1.4;
+            min-height: 60px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        /* Seções de conteúdo */
+        .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .content-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .content-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        
+        /* TEXTOS EXPLICATIVOS MELHORADOS */
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #f0f0f0;
+        }
+        
+        .feature-text {
+            background: rgba(255, 204, 0, 0.1);
+            border-left: 4px solid #ffcc00;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+        
+        .key-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .key-point::before {
+            content: "•";
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 10px;
+            line-height: 1;
+        }
+        
+        .benefit-highlight {
+            background: linear-gradient(135deg, rgba(255,204,0,0.15), rgba(255,153,0,0.15));
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid rgba(255,204,0,0.3);
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        li::before {
+            content: "▶";
+            color: #ffcc00;
+            position: absolute;
+            left: -15px;
+        }
+        
+        /* Seção de depoimentos */
+        .testimonials {
+            background: #111;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ffcc00;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: #ffcc00;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Seção de garantia */
+        .guarantee {
+            text-align: center;
+            background: linear-gradient(135deg, #000, #1a1a1a);
+        }
+        
+        .guarantee-box {
+            background: #111;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #ffcc00;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffcc00;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Rodapé */
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .button-container {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">SUA RENDA DIGITAL EM CASA</div>
+        </div>
+    </header>
+    
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">DESPERTE PARA UMA NOVA REALIDADE FINANCEIRA!</h1>
+            <p class="fade-in">Descubra o método comprovado que já transformou a vida de milhares de pessoas comuns em uma <span class="highlight">máquina de ganhar dinheiro online</span>!</p>
+            <div class="button-container">
+                <a href="https://pay.kiwify.com.br/sUqnazH?afid=tEqJCOO2" class="cta-button fade-in">QUERO MINHA LIBERDADE FINANCEIRA AGORA!</a>
+            </div>
+            <p class="fade-in">OFERTA POR TEMPO LIMITADO - GARANTA SEU ACESSO HOJE!</p>
+        </div>
+    </section>
+    
+    <!-- Seção Problema -->
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <div class="content-text">
+                    <h2>CANSOU DE VIVER NO VERMELHO?</h2>
+                    <p>Você já se pegou pensando em como seria sua vida se o dinheiro não fosse um problema?</p>
+                    
+                    <div class="feature-text">
+                        Enquanto você luta para pagar as contas no final do mês, outras pessoas estão gerando <span class="highlight">renda passiva</span> enquanto dormem, viajam ou simplesmente aproveitam a vida.
+                    </div>
+                    
+                    <div class="key-point">
+                        A verdade é que o sistema foi feito para manter você preso no ciclo infinito: trabalhar, pagar contas, repetir. Mas existe uma saída!
+                    </div>
+                    
+                    <div class="button-container">
+                        <a href="https://pay.kiwify.com.br/sUqnazH?afid=tEqJCOO2" class="cta-button">QUERO SAIR DA RODA DOS RATOS!</a>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://i.ibb.co/mC3JCcxr/3-Sem-T-tulo-20251021190945.jpg" alt="Pessoa frustrada com finanças">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Solução -->
+    <section>
+                <div class="content-text">
+                    <h2>A SOLUÇÃO QUE VOCÊ PROCURAVA!</h2>
+                    <p>Imagine acordar todas as manhãs com dinheiro entrando na sua conta, mesmo enquanto você dormia...</p>
+                    
+                    <div class="benefit-highlight">
+                        O curso <span class="highlight">Sua Renda Digital em Casa</span> revela o método passo a passo que permite que pessoas comuns, sem experiência prévia, criem fontes de renda online consistentes e escaláveis.
+                    </div>
+                    
+                    <div class="key-point">
+                        Não importa sua idade, formação ou experiência - se você consegue seguir instruções simples, você pode aplicar este método e transformar sua realidade financeira.
+                    </div>
+                    
+                    <div class="button-container">
+                        <a href="https://pay.kiwify.com.br/sUqnazH?afid=tEqJCOO2" class="cta-button">QUERO COMEÇAR A GANHAR DINHEIRO ONLINE!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Benefícios -->
+    <section>
+        <div class="container">
+            <h2 style="text-align: center;">O QUE VOCÊ VAI RECEBER?</h2>
+            
+            <div class="feature-text" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                Um conjunto completo de ferramentas e conhecimentos para sua independência financeira, com suporte especializado e metodologia comprovada.
+            </div>
+            
+            <div class="content-section">
+                <div class="content-text">
+                    <h3>MÓDULOS COMPLETOS E OBJETIVOS</h3>
+                    <ul>
+                        <li>Método comprovado para gerar renda online do zero</li>
+                        <li>Estratégias que funcionam mesmo para iniciantes absolutos</li>
+                        <li>Como escalar seus resultados sem trabalhar mais horas</li>
+                        <li>Ferramentas e recursos exclusivos para alunos</li>
+                        <li>Suporte direto com especialistas do mercado</li>
+                    </ul>
+                </div>
+                <div class="content-text">
+                    <h3>RESULTADOS QUE VOCÊ PODE ESPERAR</h3>
+                    <ul>
+                        <li>Primeiros resultados em poucas semanas</li>
+                        <li>Renda extra de R$ 500 a R$ 2.000 no primeiro mês</li>
+                        <li>Potencial para renda mensal de 5 dígitos</li>
+                        <li>Liberdade de tempo e local</li>
+                        <li>Independência financeira real</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="button-container" style="margin-top: 40px;">
+                <a href="https://pay.kiwify.com.br/sUqnazH?afid=tEqJCOO2" class="cta-button">QUERO GARANTIR MEU ACESSO AGORA!</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>QUEM JÁ FEZ, RECOMENDA!</h2>
+            
+            <div class="feature-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                Veja o que nossos alunos estão dizendo sobre suas experiências de transformação financeira
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="https://i.pinimg.com/736x/68/a9/68/68a968808f8951a151f98e4722bf10e7.jpg" alt="Maria Silva" class="testimonial-avatar">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Em apenas 3 semanas aplicando o método, consegui minha primeira venda online. Hoje, 4 meses depois, já estou faturando mais do que no meu emprego formal!"
+                    </div>
+                    <div class="testimonial-author">- Maria Silva, 32 anos</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://img.freepik.com/fotos-gratis/homem-fazendo-uma-videochamada-com-a-familia_23-2149120895.jpg?semt=ais_hybrid&w=740&q=80" alt="João Pereira" class="testimonial-avatar">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Sempre achei que ganhar dinheiro online era coisa para gênios da tecnologia. O curso me mostrou que qualquer pessoa consegue, desde que siga o passo a passo correto!"
+                    </div> 
+                    <div class="testimonial-author">- João Pereira, 32 anos</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjQ4mctZgmEjRYCnJXKcGgpBgH-na7GX9Mh9NLZmPOKz-JnGsz6agljw&s=10" alt="Ana Rodrigues" class="testimonial-avatar">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">
+                        "Depois de ser demitida na pandemia, esse curso salvou minha vida financeira. Em 2 meses já tinha uma renda estável e hoje trabalho de qualquer lugar do mundo!"
+                    </div>
+                    <div class="testimonial-author">- Ana Rodrigues, 28 anos</div>
+                </div>
+            </div>
+            
+            <div class="button-container" style="margin-top: 40px;">
+                <a href="https://pay.kiwify.com.br/sUqnazH?afid=tEqJCOO2" class="cta-button">EU TAMBÉM QUERO FAZER PARTE DESSE GRUPO!</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Oferta Especial -->
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <div class="content-text">
+                    <h2>OFERTA COM DESCONTO POR TEMPO LIMITADO!</h2>
+                    <p>Por um período muito curto, estamos oferecendo o acesso completo ao curso <span class="highlight">Sua Renda Digital em Casa</span> com um desconto especial de lançamento.</p>
+                    
+                    <div class="benefit-highlight">
+                        Além disso, você receberá <span class="highlight">3 bônus exclusivos</span> que sozinhos valem mais que o valor do curso, acelerando ainda mais seus resultados.
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Bônus 1:</strong> Guia de Aceleração de Resultados (R$ 197)</li>
+                        <li><strong>Bônus 2:</strong> Acesso ao Grupo VIP de Alunos (R$ 97)</li>
+                        <li><strong>Bônus 3:</strong> Consultoria Individual (R$ 297)</li>
+                    </ul>
+                    
+                    <div class="key-point" style="background: rgba(255,204,0,0.2); padding: 15px; border-radius: 8px;">
+                        <strong>Essa oferta expira em breve!</strong> Não perca esta oportunidade única de transformar sua vida financeira com um investimento acessível.
+                    </div>
+                    
+                    <div class="button-container">
+                        <a href="https://pay.kiwify.com.br/sUqnazH?afid=tEqJCOO2" class="cta-button">QUERO APROVEITAR ESTA OPORTUNIDADE!</a>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://tonafama.ig.com.br/wp-content/uploads/2024/11/10-Formas-de-Como-Ganhar-Dinheiro-Online-Pelo-Celular-Hoje.jpg" alt="Viagem e liberdade financeira">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção Garantia -->
+    <section class="guarantee">
+        <div class="container">
+            <h2>RISCO ZERO PARA VOCÊ!</h2>
+            <div class="guarantee-box">
+                <h3>GARANTIA INCONDICIONAL DE 7 DIAS</h3>
+                
+                <div class="feature-text" style="text-align: center; background: transparent; border: none;">
+                    Oferecemos uma garantia de 7 dias onde você pode acessar todo o conteúdo, aplicar as estratégias e, se 
